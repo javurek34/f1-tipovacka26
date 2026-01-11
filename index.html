@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 TIPOVAČKA 2026 - FINAL TEXT UPDATED</title>
+    <title>F1 TIPOVAČKA 2026 - FULL EDITION</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Bruno+Ace&display=swap" rel="stylesheet">
     <style>
@@ -142,10 +142,8 @@
             "NOR": "https://img2.51gt3.com/rac/racer/202503/cfc139b2b49e48cd80a436c00a71711d.png",
             "PIA": "https://ratings-images-prod.pulse.ea.com/F1-25/portraits/p4.png",
             "LEC": "https://img2.51gt3.com/rac/racer/202503/fe2de9975d864e38acfd9933164954a6.png",
-            "RUS": "https://www.formulaonehistory.com/wp-content/uploads/2023/10/George-Russell-F1-2023.webp",
             "HAM": "https://img2.51gt3.com/rac/racer/202503/0ff8ae7649b447bd8e023f4e31dc4042.png",
-            "SAI": "https://cdn-4.motorsport.com/images/mgl/2jXPqrg6/s800/carlos-sainz-williams.jpg",
-            "ALO": "https://img2.51gt3.com/rac/racer/202503/25ccca7ffa96437aa54f169a4e9338fa.png"
+            "SAI": "https://cdn-4.motorsport.com/images/mgl/2jXPqrg6/s800/carlos-sainz-williams.jpg"
         };
 
         const constructorData = {
@@ -212,15 +210,15 @@
             battleGrid.innerHTML += `<div class="battle-card overflow-hidden shadow-lg" style="border-top: 4px solid ${team.color}"><div class="bg-white/5 py-2 px-4 flex justify-between items-center"><span class="text-[9px] font-black uppercase text-gray-500">${team.name}</span><img src="${team.logo}" class="h-3 w-auto opacity-40"></div><div class="flex p-4 items-center gap-3"><div class="flex-1 flex flex-col items-center"><img src="${d.img1}" class="w-16 h-16 rounded-full mb-2 border-2 border-white/10 shadow-lg object-cover"><span class="text-[11px] font-black text-white">${d.d1}</span><div class="text-[8px] text-gray-400 font-black mt-1 uppercase">${d.t1.join(',')}</div></div><div class="text-white/20 font-black text-xs italic">VS</div><div class="flex-1 flex flex-col items-center"><img src="${d.img2}" class="w-16 h-16 rounded-full mb-2 border-2 border-white/10 shadow-lg object-cover opacity-40"><span class="text-[11px] font-black text-white/60">${d.d2}</span><div class="text-[8px] text-gray-500 font-black mt-1 uppercase">${d.t2.length?d.t2.join(','):'-'}</div></div></div></div>`;
         });
 
-        // Různé otázky (UPDATED TEXTS)
+        // Různé otázky (S NOVÝMI POLOŽKAMI Z OBRÁZKŮ)
         const miscQuestions = [
             { q: "Brazílie prší?", tips: { "Škody": "ANO", "Králik": "ANO", "Javor": "NE", "Čermis": "ANO" } },
             { q: "Belgie prší?", tips: { "Škody": "ANO", "Králik": "NE", "Javor": "NE", "Čermis": "NE" } },
-            { q: "Monako čas?", tips: { "Škody": "pomalejší", "Králik": "rychlejší", "Javor": "pomalejší", "Čermis": "rychlejší" } },
+            { q: "Kolik vítězů v sezóně?", tips: { "Škody": "6", "Králik": "5", "Javor": "6", "Čermis": "5" } },
+            { q: "Ferrari vyhraje v Monze?", tips: { "Škody": "NE", "Králik": "ANO", "Javor": "NE", "Čermis": "NE" } },
             { q: "Hamilton 106. win?", tips: { "Škody": "ANO", "Králik": "NE", "Javor": "ANO", "Čermis": "NE" } },
             { q: "Pit stop <1.91s?", tips: { "Škody": "NE", "Králik": "NE", "Javor": "ANO", "Čermis": "ANO" } },
             { q: "Vydrží Hadjar celou sezonu?", tips: { "Škody": "ANO", "Králik": "ANO", "Javor": "ANO", "Čermis": "ANO" } },
-            { q: "Papaya rules?", tips: { "Škody": "Držet", "Králik": "Držet", "Javor": "Držet", "Čermis": "Držet" } },
             { q: "Kolikrát full wets?", tips: { "Škody": "1x-3x", "Králik": "1x-3x", "Javor": "0x", "Čermis": "1x-3x" } }
         ];
 
@@ -231,7 +229,6 @@
             miscGrid.innerHTML += html + `</div></div>`;
         });
 
-        // Safety Car (UPDATED TEXTS)
         const scQuestions = [
             { q: "Austrálie SC?", tips: { "Škody": "ANO", "Králik": "ANO", "Javor": "ANO", "Čermis": "NE" } },
             { q: "Celkem SC?", tips: { "Škody": "10–15", "Králik": "5–7", "Javor": "5–7", "Čermis": "5–7" } },
