@@ -11,26 +11,30 @@
         body { 
             background: radial-gradient(circle at top, #1a1a2e 0%, #0a0a0a 100%); 
             background-attachment: fixed; 
-            color: white; 
+            color: white;
+            overflow-x: hidden;
         }
         .card-base { 
             background: rgba(255, 255, 255, 0.04); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 1.5rem; 
+            border-radius: 1.25rem; 
             backdrop-filter: blur(12px);
+            height: 100%;
         }
         .driver-img { object-fit: cover; object-position: top; width: 100%; height: 100%; }
         .img-container { 
             width: 100%; aspect-ratio: 1/1; overflow: hidden; 
-            border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); 
         }
         .sticky-col { position: sticky; left: 0; background: #0f0f1e; z-index: 10; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
+        /* Oprava přetékání textu */
+        .break-word { overflow-wrap: break-word; word-wrap: break-word; }
     </style>
 </head>
 <body class="pb-20">
-    <header class="py-16 text-center">
-        <h1 class="text-5xl md:text-7xl italic uppercase tracking-tighter">
+    <header class="py-12 md:py-20 text-center px-4">
+        <h1 class="text-4xl md:text-7xl italic uppercase tracking-tighter leading-tight">
             Tipovačka <span class="text-red-600">2026</span>
         </h1>
     </header>
@@ -77,38 +81,48 @@
             williams: { n: "Williams", c: "#00A0DE", l: "https://images.seeklogo.com/logo-png/61/1/atlassian-williams-racing-logo-png_seeklogo-613639.png" }
         };
         const app = document.getElementById('app');
-        // --- 1. MISTŘI SVĚTA ---
+        // --- 1. MISTŘI SVĚTA (Opraveno přetékání a responzivita) ---
         const renderTopSection = () => {
             let html = `
             <section class="space-y-12">
-                <div class="flex flex-wrap justify-center gap-8">
-                    <div class="card-base p-8 w-72 text-center border-2 border-yellow-500 shadow-[0_0_30px_rgba(234,179,8,0.15)] transition-transform hover:scale-105">
-                        <div class="text-[10px] text-yellow-500 font-bold mb-6 uppercase tracking-[0.3em]">Mistr Světa</div>
-                        <div class="img-container mb-6 border-yellow-500/20 shadow-inner">
-                            <img src="${D.Verstappen}" class="driver-img">
+                <div class="flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-6 md:gap-8">
+                    
+                    <div class="card-base p-6 md:p-8 w-full md:w-80 text-center border-2 border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.1)] transition-transform hover:scale-[1.02] flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] text-yellow-500 font-bold mb-4 md:mb-6 uppercase tracking-[0.3em]">Mistr Světa</div>
+                            <div class="img-container mb-4 md:mb-6 border-yellow-500/20 max-w-[200px] mx-auto">
+                                <img src="${D.Verstappen}" class="driver-img">
+                            </div>
+                            <h3 class="text-2xl md:text-3xl uppercase italic leading-tight break-word px-2">Verstappen</h3>
                         </div>
-                        <h3 class="text-3xl uppercase italic leading-none mb-4">Verstappen</h3>
-                        <p class="text-[9px] text-gray-400 uppercase font-black tracking-widest leading-relaxed">
-                            Škody<br>Javor<br>Čermis
-                        </p>
+                        <div class="mt-4 pt-4 border-t border-white/5">
+                            <p class="text-[10px] text-gray-400 uppercase font-black tracking-widest leading-relaxed">
+                                Škody • Javor • Čermis
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="card-base p-8 w-72 text-center border-2 border-orange-500 shadow-[0_0_30px_rgba(249,115,22,0.15)] transition-transform hover:scale-105">
-                        <div class="text-[10px] text-orange-500 font-bold mb-6 uppercase tracking-[0.3em]">Mistr Světa</div>
-                        <div class="img-container mb-6 border-orange-500/20 shadow-inner">
-                            <img src="${D.Piastri}" class="driver-img">
+                    <div class="card-base p-6 md:p-8 w-full md:w-80 text-center border-2 border-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.1)] transition-transform hover:scale-[1.02] flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] text-orange-500 font-bold mb-4 md:mb-6 uppercase tracking-[0.3em]">Mistr Světa</div>
+                            <div class="img-container mb-4 md:mb-6 border-orange-500/20 max-w-[200px] mx-auto">
+                                <img src="${D.Piastri}" class="driver-img">
+                            </div>
+                            <h3 class="text-2xl md:text-3xl uppercase italic leading-tight break-word px-2">Piastri</h3>
                         </div>
-                        <h3 class="text-3xl uppercase italic leading-none mb-4">Piastri</h3>
-                        <p class="text-[9px] text-gray-400 uppercase font-black tracking-widest leading-relaxed">
-                            Králik
-                        </p>
+                        <div class="mt-4 pt-4 border-t border-white/5">
+                            <p class="text-[10px] text-gray-400 uppercase font-black tracking-widest">
+                                Králik
+                            </p>
+                        </div>
                     </div>
+                    
                 </div>
             </section>`;
             app.innerHTML += html;
         };
 
-        // --- 2. POHÁR KONSTRUKTÉRŮ ---
+        // --- 2. POHÁR KONSTRUKTÉRŮ (Responzivní tabulka) ---
         const renderConstructors = () => {
             const stand = {
                 Škody: ["mercedes","mclaren","redbull","ferrari","audi","williams","aston","rb","cadillac","alpine","haas"],
@@ -121,37 +135,37 @@
             for(let i = 0; i < 11; i++) {
                 tableRows += `
                 <tr class="hover:bg-white/[0.03] transition-colors border-b border-white/5 last:border-0">
-                    <td class="p-6 sticky-col font-black italic text-2xl text-center border-r border-white/5 text-gray-500">${i + 1}.</td>` + 
+                    <td class="p-4 md:p-6 sticky-col font-black italic text-xl md:text-2xl text-center border-r border-white/5 text-gray-500">${i + 1}.</td>` + 
                     ["Škody", "Králik", "Javor", "Čermis"].map(p => {
                         const teamKey = stand[p][i];
                         const team = T[teamKey];
                         return `
-                        <td class="p-4">
-                            <div class="flex flex-col items-center justify-center min-w-[140px]">
-                                <img src="${team.l}" class="h-10 mb-2 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-                                <span class="text-[9px] uppercase text-gray-400 font-black tracking-tighter">${team.n}</span>
+                        <td class="p-3 md:p-4">
+                            <div class="flex flex-col items-center justify-center min-w-[100px] md:min-w-[140px]">
+                                <img src="${team.l}" class="h-6 md:h-10 mb-1 md:mb-2 object-contain filter drop-shadow-md">
+                                <span class="text-[7px] md:text-[9px] uppercase text-gray-400 font-black tracking-tighter text-center">${team.n}</span>
                             </div>
                         </td>`;
                     }).join('') + `</tr>`;
             }
 
             let html = `
-            <section class="card-base overflow-hidden border-emerald-500/20 shadow-2xl">
-                <div class="bg-gradient-to-r from-emerald-950/40 via-emerald-900/40 to-emerald-950/40 py-8 text-center border-b border-white/10">
-                    <h2 class="text-3xl italic uppercase tracking-[0.25em] text-emerald-400">Pohár Konstruktérů</h2>
+            <section class="card-base overflow-hidden border-emerald-500/20 shadow-xl">
+                <div class="bg-gradient-to-r from-emerald-950/40 via-emerald-900/40 to-emerald-950/40 py-6 md:py-8 text-center border-b border-white/10 px-4">
+                    <h2 class="text-xl md:text-3xl italic uppercase tracking-[0.2em] text-emerald-400">Pohár Konstruktérů</h2>
                 </div>
-                <div class="overflow-x-auto no-scrollbar">
-                    <table class="w-full text-center min-w-[800px]">
-                        <thead class="bg-black/60 text-[11px] text-emerald-500/70 uppercase font-black">
+                <div class="overflow-x-auto no-scrollbar scroll-smooth">
+                    <table class="w-full text-center">
+                        <thead class="bg-black/60 text-[9px] md:text-[11px] text-emerald-500/70 uppercase font-black">
                             <tr>
-                                <th class="p-6 sticky-col border-r border-white/5">Pozice</th>
-                                <th class="p-6 tracking-widest">Škody</th>
-                                <th class="p-6 tracking-widest">Králik</th>
-                                <th class="p-6 tracking-widest">Javor</th>
-                                <th class="p-6 tracking-widest">Čermis</th>
+                                <th class="p-4 md:p-6 sticky-col border-r border-white/5">Poz.</th>
+                                <th class="p-4 md:p-6 tracking-widest">Škody</th>
+                                <th class="p-4 md:p-6 tracking-widest">Králik</th>
+                                <th class="p-4 md:p-6 tracking-widest">Javor</th>
+                                <th class="p-4 md:p-6 tracking-widest">Čermis</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-white/5 font-bold">
+                        <tbody class="divide-y divide-white/5">
                             ${tableRows}
                         </tbody>
                     </table>
@@ -180,57 +194,55 @@
 
             let h2hHTML = `
             <section>
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl text-red-600 uppercase italic tracking-tighter mb-4">Interní Souboje</h2>
-                    <div class="h-1 w-24 bg-red-600 mx-auto rounded-full"></div>
+                <div class="text-center mb-12 px-4">
+                    <h2 class="text-3xl md:text-5xl text-red-600 uppercase italic tracking-tighter mb-4">Interní Souboje</h2>
+                    <div class="h-1 w-20 bg-red-600 mx-auto rounded-full"></div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">`;
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">`;
 
             h2h.forEach(x => {
                 const team = T[x.t];
                 const count1 = x.v1.length;
                 const count2 = x.v2.length;
-                const total = count1 + count2;
+                const total = 4; // Celkem 4 tipující
                 const p1 = (count1 / total) * 100;
                 const p2 = (count2 / total) * 100;
 
                 h2hHTML += `
-                <div class="card-base p-6 border-t-4 transition-all duration-500 hover:bg-white/[0.08]" style="border-top-color:${team.c}">
-                    <div class="flex justify-between items-center mb-8">
-                        <img src="${team.l}" class="h-7 opacity-90 object-contain drop-shadow-md">
-                        <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest">${team.n}</span>
+                <div class="card-base p-5 md:p-6 border-t-4 transition-all duration-300 hover:bg-white/[0.07]" style="border-top-color:${team.c}">
+                    <div class="flex justify-between items-center mb-6">
+                        <img src="${team.l}" class="h-6 md:h-7 opacity-90 object-contain">
+                        <span class="text-[9px] text-gray-500 uppercase font-black tracking-widest">${team.n}</span>
                     </div>
                     
-                    <div class="flex justify-between items-end gap-2 mb-6 text-center">
-                        <div class="flex-1 group">
-                            <div class="img-container mb-3 border-2 transition-transform group-hover:scale-105" style="border-color:${team.c}33">
+                    <div class="flex justify-between items-end gap-3 mb-6 text-center">
+                        <div class="flex-1 min-w-0">
+                            <div class="img-container mb-3 border-2 border-white/5" style="border-color:${team.c}22">
                                 <img src="${D[x.d1]}" class="driver-img">
                             </div>
-                            <div class="text-[11px] font-black uppercase tracking-tight">${x.d1}</div>
+                            <div class="text-[10px] md:text-[11px] font-black uppercase tracking-tight truncate">${x.d1}</div>
                         </div>
                         
-                        <div class="pb-14 text-xs text-white/10 italic font-black">VS</div>
+                        <div class="pb-10 text-[10px] text-white/20 italic font-black uppercase">vs</div>
                         
-                        <div class="flex-1 group">
-                            <div class="img-container mb-3 border-2 transition-transform group-hover:scale-105" style="border-color:${team.c}33">
+                        <div class="flex-1 min-w-0">
+                            <div class="img-container mb-3 border-2 border-white/5" style="border-color:${team.c}22">
                                 <img src="${D[x.d2]}" class="driver-img">
                             </div>
-                            <div class="text-[11px] font-black uppercase tracking-tight">${x.d2}</div>
+                            <div class="text-[10px] md:text-[11px] font-black uppercase tracking-tight truncate">${x.d2}</div>
                         </div>
                     </div>
 
-                    <div class="h-4 w-full bg-black/40 rounded-full overflow-hidden flex border border-white/5 mb-3 shadow-inner">
-                        <div style="width:${p1}%; background-color:${team.c}" class="h-full transition-all duration-1000 relative">
-                            <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"></div>
-                        </div>
-                        <div style="width:${p2}%; background-color:${team.c}" class="h-full opacity-20 transition-all duration-1000"></div>
+                    <div class="h-3 w-full bg-black/40 rounded-full overflow-hidden flex border border-white/5 mb-4">
+                        <div style="width:${p1}%; background-color:${team.c}" class="h-full transition-all duration-1000 shadow-[inset_-2px_0_5px_rgba(0,0,0,0.2)]"></div>
+                        <div style="width:${p2}%; background-color:${team.c}" class="h-full opacity-30 transition-all duration-1000"></div>
                     </div>
 
-                    <div class="flex justify-between text-[8px] uppercase font-black tracking-tight px-1">
-                        <div class="text-left w-1/2 leading-relaxed">
+                    <div class="flex justify-between gap-4 text-[8px] uppercase font-black tracking-tighter">
+                        <div class="w-1/2 break-word leading-relaxed">
                             <span style="color:${team.c}">${x.v1.join(', ') || '—'}</span>
                         </div>
-                        <div class="text-right w-1/2 leading-relaxed">
+                        <div class="w-1/2 text-right break-word leading-relaxed">
                             <span class="text-gray-500">${x.v2.join(', ') || '—'}</span>
                         </div>
                     </div>
@@ -244,7 +256,6 @@
         renderH2H();
         // --- 4. SPECIÁLNÍ SOUBOJE (PRVNÍ BODY, POLES, NEJHŮŘE) ---
         const renderSpecialDuels = () => {
-            // Data vytažená z obrázků: Kdo získá první body
             const pointsDuels = [
                 {q: "Cadillac vs Audi", tips: {Škody:"Audi", Králik:"OBA", Javor:"Audi", Čermis:"Audi"}},
                 {q: "Ferrari vs Aston Martin", tips: {Škody:"Ferrari", Králik:"OBA", Javor:"OBA", Čermis:"Aston Martin"}},
@@ -252,7 +263,6 @@
                 {q: "Haas vs Racing Bulls", tips: {Škody:"Racing Bulls", Králik:"OBA", Javor:"OBA", Čermis:"Racing Bulls"}}
             ];
 
-            // Data vytažená z obrázků: Pole Positions
             const poleDuels = [
                 {q: "Verstappen vs Russell vs Norris", tips: {Škody:"Norris", Králik:"Norris", Javor:"Verstappen", Čermis:"Verstappen"}},
                 {q: "Antonelli vs Sainz vs Piastri", tips: {Škody:"Piastri", Králik:"Piastri", Javor:"Piastri", Čermis:"Piastri"}},
@@ -260,45 +270,44 @@
                 {q: "Verstappen vs Leclerc vs Russell", tips: {Škody:"Verstappen", Králik:"Leclerc", Javor:"Verstappen", Čermis:"Verstappen"}}
             ];
 
-            // Data vytažená z obrázků: Nejhůře v klasifikaci
             const worstDuels = [
                 {q: "Alonso vs Leclerc vs Russell", tips: {Škody:"Alonso", Králik:"Alonso", Javor:"Leclerc", Čermis:"Leclerc"}},
                 {q: "Stroll vs Pérez vs Lawson", tips: {Škody:"Stroll", Králik:"Stroll", Javor:"Pérez", Čermis:"Stroll"}},
                 {q: "Bottas vs Ocon vs Bortoleto", tips: {Škody:"Ocon", Králik:"Bottas", Javor:"Ocon", Čermis:"Ocon"}}
             ];
 
-            const renderCardGroup = (title, data, colorClass, type) => {
+            const renderCardGroup = (title, data, colorClass) => {
                 let sectionHtml = `
-                <div>
-                    <h2 class="text-3xl ${colorClass} mb-8 uppercase italic border-l-4 border-current pl-4 tracking-wider">
+                <div class="space-y-8">
+                    <h2 class="text-2xl md:text-3xl ${colorClass} uppercase italic border-l-4 border-current pl-4 tracking-wider mx-4">
                         ${title}
                     </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">`;
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4">`;
 
                 data.forEach(d => {
                     sectionHtml += `
-                    <div class="card-base p-5 flex flex-col justify-between border-white/5 transition-all hover:border-white/20">
-                        <div class="text-[9px] text-gray-400 mb-6 font-bold uppercase border-b border-white/10 pb-3 leading-tight min-h-[40px]">
+                    <div class="card-base p-5 flex flex-col justify-between border-white/5 transition-all hover:bg-white/[0.06]">
+                        <div class="text-[9px] md:text-[10px] text-gray-400 mb-6 font-bold uppercase border-b border-white/10 pb-3 leading-tight min-h-[45px] break-word">
                             ${d.q}
                         </div>
-                        <div class="grid grid-cols-2 gap-4">` +
+                        <div class="grid grid-cols-2 gap-x-2 gap-y-6">` +
                         Object.entries(d.tips).map(([n, val]) => {
                             let content = "";
                             if (val === "OBA") {
-                                content = `<div class="w-14 h-14 mx-auto flex items-center justify-center bg-white/5 rounded-full border border-white/10 text-[10px] text-gray-500 italic">OBA</div>`;
+                                content = `<div class="w-12 h-12 md:w-14 md:h-14 mx-auto flex items-center justify-center bg-white/5 rounded-full border border-white/10 text-[9px] text-gray-500 italic font-black">OBA</div>`;
                             } else {
-                                // Zjistíme, zda jde o jezdce nebo tým pro zobrazení fotky/loga
+                                // Vyhledání obrázku (jezdec nebo logo týmu)
                                 const imgSrc = D[val] || (Object.values(T).find(t => t.n === val)?.l);
                                 content = `
-                                <div class="w-14 h-14 rounded-full mx-auto border-2 border-white/10 mb-2 overflow-hidden shadow-lg group-hover:border-white/30">
-                                    <img src="${imgSrc || ''}" class="w-full h-full object-cover bg-black">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full mx-auto border-2 border-white/10 overflow-hidden shadow-lg bg-black">
+                                    <img src="${imgSrc || ''}" class="w-full h-full object-cover">
                                 </div>`;
                             }
                             return `
-                            <div class="text-center group">
-                                <div class="text-[8px] text-gray-500 mb-2 uppercase font-black tracking-widest">${n}</div>
+                            <div class="text-center">
+                                <div class="text-[7px] text-gray-500 mb-2 uppercase font-black tracking-widest truncate">${n}</div>
                                 ${content}
-                                <div class="text-[8px] font-bold uppercase ${colorClass} leading-tight mt-1">${val}</div>
+                                <div class="text-[8px] font-bold uppercase ${colorClass} leading-tight mt-2 break-word px-1">${val}</div>
                             </div>`;
                         }).join('') + 
                     `</div></div>`;
@@ -306,57 +315,57 @@
                 return sectionHtml + `</div></div>`;
             };
 
-            let html = `<section class="space-y-20">`;
-            html += renderCardGroup("Kdo získá první body", pointsDuels, "text-emerald-400", "teams");
-            html += renderCardGroup("Souboje o Pole Positions", poleDuels, "text-red-500", "drivers");
-            html += renderCardGroup("Kdo skončí nejhůře", worstDuels, "text-blue-400", "drivers");
+            let html = `<section class="space-y-24">`;
+            html += renderCardGroup("Kdo získá první body", pointsDuels, "text-emerald-400");
+            html += renderCardGroup("Souboje o Pole Positions", poleDuels, "text-red-500");
+            html += renderCardGroup("Kdo skončí nejhůře", worstDuels, "text-blue-400");
             html += `</section>`;
             
             app.innerHTML += html;
         };
 
         renderSpecialDuels();
-        // --- 5. DOPLŇUJÍCÍ OTÁZKY A SAFETY CAR ---
+        // --- 5. DOPLŇUJÍCÍ OTÁZKY A SAFETY CAR (Responzivní gridy) ---
         const renderQuestions = () => {
             const misc = [
-                {q:"Která stáj získá v sezóně nejvíce DHL Fastest Pit Stop?", t:{Škody:"McLaren",Králik:"Ferrari",Javor:"Ferrari",Čermis:"Red Bull"}},
+                {q:"Nejvíce DHL Fastest Pit Stop?", t:{Škody:"McLaren",Králik:"Ferrari",Javor:"Ferrari",Čermis:"Red Bull"}},
                 {q:"Bude v Brazílii pršet?", t:{Škody:"ANO",Králik:"ANO",Javor:"NE",Čermis:"ANO"}},
                 {q:"Bude v Belgii pršet?", t:{Škody:"ANO",Králik:"NE",Javor:"NE",Čermis:"NE"}},
-                {q:"Monako: Rychlejší/Pomalejší čas než 2025?", t:{Škody:"POMALU",Králik:"RYCHLE",Javor:"POMALU",Čermis:"RYCHLE"}},
-                {q:"Získá Hamilton 106. výhru?", t:{Škody:"ANO",Králik:"NE",Jav:"ANO",Čermis:"NE"}},
+                {q:"Monako: Čas vs 2025?", t:{Škody:"POMALU",Králik:"RYCHLE",Javor:"POMALU",Čermis:"RYCHLE"}},
+                {q:"Získá Hamilton 106. výhru?", t:{Škody:"ANO",Králik:"NE",Javor:"ANO",Čermis:"NE"}},
                 {q:"Pit Stop pod 1.91s?", t:{Škody:"NE",Králik:"NE",Javor:"ANO",Čermis:"ANO"}},
                 {q:"Hadjar odjede celou sezónu?", t:{Škody:"ANO",Králik:"ANO",Javor:"ANO",Čermis:"ANO"}},
                 {q:"Papaya Rules (Držet/Pustit)?", t:{Škody:"DRŽET",Králik:"DRŽET",Javor:"DRŽET",Čermis:"DRŽET"}},
-                {q:"Počet unikátních vítězů v sezóně?", t:{Škody:"6",Králik:"5",Javor:"6",Čermis:"5"}},
+                {q:"Počet unikátních vítězů?", t:{Škody:"6",Králik:"5",Javor:"6",Čermis:"5"}},
                 {q:"Vyhraje Ferrari v Monze?", t:{Škody:"NE",Králik:"ANO",Javor:"NE",Čermis:"NE"}}
             ];
 
             const sc = [
-                {q:"Safety Car v Austrálii?", t:{Škody:"ANO",Králik:"ANO",Javor:"ANO",Čer:"NE"}},
-                {q:"Celkový počet SC za sezónu?", t:{Škody:"10-15",Králik:"5-7",Javor:"5-7",Čermis:"5-7"}},
-                {q:"Který tým zaviní nejvíce SC/VSC?", t:{Škody:"MERC",Králik:"MERC",Javor:"MERC",Čermis:"ASTON"}},
+                {q:"Safety Car v Austrálii?", t:{Škody:"ANO",Králik:"ANO",Javor:"ANO",Čermis:"NE"}},
+                {q:"Počet SC za sezónu?", t:{Škody:"10-15",Králik:"5-7",Javor:"5-7",Čermis:"5-7"}},
+                {q:"Tým s nejvíce SC/VSC?", t:{Škody:"MERC",Králik:"MERC",Javor:"MERC",Čermis:"ASTON"}},
                 {q:"SC v SGP, AZE, CAN?", t:{Škody:"2 ze 3",Králik:"2 ze 3",Javor:"Jen SGP",Čermis:"2 ze 3"}}
             ];
 
             let qHTML = `
-            <section class="space-y-16 pb-24">
+            <section class="space-y-16 pb-20 px-4">
                 <div>
-                    <h2 class="text-3xl text-purple-400 mb-8 uppercase italic border-l-4 border-purple-600 pl-4 tracking-wider">
+                    <h2 class="text-2xl md:text-3xl text-purple-400 mb-8 uppercase italic border-l-4 border-purple-600 pl-4 tracking-wider">
                         Doplňující otázky
                     </h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">`;
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">`;
             
             misc.forEach(m => {
                 qHTML += `
-                <div class="card-base p-6 bg-white/[0.03] border-white/5 shadow-inner">
-                    <div class="text-[10px] text-gray-400 mb-5 font-bold uppercase leading-tight min-h-[2.5rem] tracking-tight border-b border-white/5 pb-3">
+                <div class="card-base p-5 bg-white/[0.03] border-white/5 shadow-inner flex flex-col justify-between">
+                    <div class="text-[10px] text-gray-400 mb-4 font-bold uppercase leading-tight min-h-[2.5rem] tracking-tight border-b border-white/5 pb-2 break-word">
                         ${m.q}
                     </div>
-                    <div class="grid grid-cols-2 gap-3">` + 
+                    <div class="grid grid-cols-2 gap-2">` + 
                     Object.entries(m.t).map(([n,a]) => `
-                        <div class="bg-black/40 p-3 rounded-lg flex flex-col items-center text-center border border-white/5">
+                        <div class="bg-black/40 p-2 rounded flex flex-col justify-center items-center text-center border border-white/5">
                             <span class="text-[7px] text-gray-500 font-black uppercase mb-1">${n}</span>
-                            <span class="font-black text-purple-400 text-[10px] uppercase">${a}</span>
+                            <span class="font-black text-purple-400 text-[9px] uppercase break-word">${a}</span>
                         </div>`).join('') + 
                     `</div>
                 </div>`;
@@ -366,23 +375,23 @@
                     </div>
                 </div>
 
-                <div class="mt-12">
-                    <h2 class="text-3xl text-amber-500 mb-8 uppercase italic border-l-4 border-amber-600 pl-4 tracking-wider">
+                <div>
+                    <h2 class="text-2xl md:text-3xl text-amber-500 mb-8 uppercase italic border-l-4 border-amber-600 pl-4 tracking-wider">
                         Safety Car Statistiky
                     </h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">`;
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">`;
 
             sc.forEach(s => {
                 qHTML += `
-                <div class="card-base p-6 bg-white/[0.03] border-white/5">
-                    <div class="text-[10px] text-gray-400 mb-5 font-bold uppercase leading-tight min-h-[2.5rem] border-b border-white/5 pb-3">
+                <div class="card-base p-5 bg-white/[0.03] border-white/5 shadow-inner">
+                    <div class="text-[10px] text-gray-400 mb-4 font-bold uppercase leading-tight min-h-[2.5rem] tracking-tight border-b border-white/5 pb-2">
                         ${s.q}
                     </div>
                     <div class="space-y-2">` + 
                     Object.entries(s.t).map(([n,a]) => `
-                        <div class="bg-black/40 p-3 rounded-lg flex justify-between items-center text-[8px] uppercase border border-white/5">
+                        <div class="bg-black/40 p-2 px-3 rounded flex justify-between items-center text-[8px] uppercase border border-white/5">
                             <span class="text-gray-500 font-black">${n}</span>
-                            <span class="font-black text-amber-500 text-right">${a}</span>
+                            <span class="font-black text-amber-500 text-right ml-2">${a}</span>
                         </div>`).join('') + 
                     `</div>
                 </div>`;
@@ -396,7 +405,7 @@
             app.innerHTML += qHTML;
         };
 
-        // --- FINÁLNÍ INICIALIZACE ---
+        // --- SPUŠTĚNÍ CELÉHO DÍLA ---
         renderQuestions();
     </script>
 </body>
