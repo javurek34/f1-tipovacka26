@@ -3,84 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 TIPOVAČKA 2026 - FULL EDITION</title>
+    <title>F1 TIPOVAČKA 2026 - COMPLETE FINAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Bruno+Ace&display=swap" rel="stylesheet">
     <style>
-        body { 
-            background: radial-gradient(circle at top, #1a1a2e 0%, #0a0a0a 100%); 
-            background-attachment: fixed; 
-        }
+        body { background: radial-gradient(circle at top, #1a1a2e 0%, #0a0a0a 100%); background-attachment: fixed; }
         .font-racing { font-family: 'Racing Sans One', sans-serif; }
         .font-bruno { font-family: 'Bruno Ace', sans-serif; }
-        
-        .champion-card { 
-            background: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, rgba(30, 30, 40, 0.9) 100%);
-            border: 2px solid #FFD700;
-        }
-        .battle-card, .misc-card, .tipster-card, .sc-card, .h2h-driver-card { 
-            background: rgba(255, 255, 255, 0.05); 
-            border: 1px solid rgba(255, 255, 255, 0.12); 
-            border-radius: 1.25rem; 
-        }
-        
-        .pos-1 { background: linear-gradient(135deg, #FFD700, #B8860B); color: black; }
-        .pos-2 { background: linear-gradient(135deg, #E0E0E0, #808080); color: black; }
-        .pos-3 { background: linear-gradient(135deg, #CD7F32, #8B4513); color: white; }
-        
-        .sticky-col { 
-            position: sticky; 
-            left: 0; 
-            background: #151525; 
-            z-index: 10; 
-            box-shadow: 2px 0 10px rgba(0,0,0,0.4);
-            min-width: 45px;
-            text-align: center;
-        }
+        .champion-card { background: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, rgba(30, 30, 40, 0.9) 100%); border: 2px solid #FFD700; }
+        .battle-card, .misc-card, .sc-card, .h2h-driver-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 1.25rem; }
+        .sticky-col { position: sticky; left: 0; background: #151525; z-index: 10; border-right: 1px solid rgba(255,255,255,0.1); min-width: 50px; text-align: center; }
     </style>
 </head>
 <body class="h-full font-bruno text-white overflow-x-hidden pb-16">
 
     <header class="py-8 text-center px-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png" alt="F1" class="h-6 mx-auto mb-4 opacity-80">
-        <h1 class="font-racing text-4xl md:text-6xl font-black italic uppercase tracking-tighter">
-            Tipovačka <span class="text-red-600">2026</span>
-        </h1>
+        <h1 class="font-racing text-4xl md:text-6xl font-black italic uppercase tracking-tighter">Tipovačka <span class="text-red-600">2026</span></h1>
     </header>
 
-    <main class="px-4 max-w-6xl mx-auto space-y-16 md:space-y-24">
+    <main class="px-4 max-w-7xl mx-auto space-y-16 md:space-y-24">
         
         <section>
-            <div class="text-center mb-6">
-                <h2 class="font-racing text-3xl font-bold italic text-yellow-500 uppercase border-b-2 border-yellow-500 pb-1 inline-block">MISTR SVĚTA</h2>
-            </div>
+            <div class="text-center mb-6"><h2 class="font-racing text-3xl text-yellow-500 border-b-2 border-yellow-500 pb-1 inline-block uppercase italic">Mistr světa</h2></div>
             <div class="flex flex-row justify-center gap-6 px-2">
                 <div class="champion-card p-5 rounded-3xl flex flex-col items-center w-48 md:w-64 text-center shadow-xl">
-                    <img src="https://cdn-6.motorsport.com/images/mgl/6D1XbeV0/s8/max-verstappen-red-bull-racing.jpg" class="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-yellow-500 mb-3 object-cover shadow-lg">
+                    <img src="https://cdn-6.motorsport.com/images/mgl/6D1XbeV0/s8/max-verstappen-red-bull-racing.jpg" class="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-yellow-500 mb-3 object-cover">
                     <h3 class="font-racing text-2xl uppercase">Verstappen</h3>
-                    <p class="text-[11px] text-yellow-500 font-bold mt-2 uppercase italic">Škody, Javor, Čermis</p>
+                    <p class="text-[10px] text-yellow-500 font-bold mt-2 italic uppercase">Škody, Javor, Čermis</p>
                 </div>
                 <div class="battle-card p-5 rounded-3xl flex flex-col items-center w-48 md:w-64 text-center border-orange-500/30">
-                    <img src="https://ratings-images-prod.pulse.ea.com/F1-25/portraits/p4.png" class="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-orange-500 mb-3 object-cover shadow-lg">
+                    <img src="https://ratings-images-prod.pulse.ea.com/F1-25/portraits/p4.png" class="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-orange-500 mb-3 object-cover">
                     <h3 class="font-racing text-2xl uppercase">Piastri</h3>
-                    <p class="text-[11px] text-orange-500 font-bold mt-2 uppercase italic">Králik</p>
+                    <p class="text-[10px] text-orange-500 font-bold mt-2 italic uppercase">Králik</p>
                 </div>
             </div>
         </section>
 
         <section class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden shadow-xl">
-            <div class="bg-emerald-700/80 py-4 px-4 text-center">
-                <h2 class="font-racing text-2xl font-bold italic uppercase">Pohár Konstruktérů</h2>
-            </div>
+            <div class="bg-emerald-700/80 py-4 text-center uppercase font-racing text-xl italic">Pohár Konstruktérů</div>
             <div class="overflow-x-auto">
-                <table class="w-full text-left min-w-[600px]">
+                <table class="w-full text-left min-w-[700px]">
                     <thead>
-                        <tr class="bg-black/40 text-[11px] uppercase text-emerald-300">
+                        <tr class="bg-black/40 text-[10px] uppercase text-emerald-300">
                             <th class="py-4 sticky-col">#</th>
-                            <th class="py-4 px-4 text-center">Škody</th>
-                            <th class="py-4 px-4 text-center">Králik</th>
-                            <th class="py-4 px-4 text-center">Javor</th>
-                            <th class="py-4 px-4 text-center">Čermis</th>
+                            <th class="py-4 px-4 text-center">Škody</th><th class="py-4 px-4 text-center">Králik</th><th class="py-4 px-4 text-center">Javor</th><th class="py-4 px-4 text-center">Čermis</th>
                         </tr>
                     </thead>
                     <tbody id="comparison-body" class="text-sm font-bold divide-y divide-white/5"></tbody>
@@ -89,34 +55,22 @@
         </section>
 
         <section>
-            <div class="text-center mb-10">
-                <h2 class="font-racing text-3xl font-bold italic text-cyan-400 uppercase border-b-2 border-cyan-400 pb-1 inline-block">KDO S KOHO – JEZDCI</h2>
-            </div>
-            <div id="h2h-drivers-visual-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <div class="text-center mb-10"><h2 class="font-racing text-3xl text-cyan-400 border-b-2 border-cyan-400 pb-1 inline-block uppercase italic">Kdo s koho – Jezdci</h2></div>
+            <div id="h2h-drivers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
         </section>
 
         <section class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden shadow-xl overflow-x-auto">
-            <div class="bg-blue-700/80 py-4 px-4 text-center">
-                <h2 class="font-racing text-2xl font-bold italic uppercase">H2H Týmy</h2>
-            </div>
-            <table class="w-full min-w-[600px]" id="h2h-table"></table>
+            <div class="bg-blue-700/80 py-4 text-center uppercase font-racing text-xl italic">H2H Týmy</div>
+            <table class="w-full min-w-[700px]" id="h2h-table"></table>
         </section>
 
         <section>
-            <div id="internal-battles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+            <div class="text-center mb-10"><h2 class="font-racing text-3xl text-purple-400 border-b-2 border-purple-400 pb-1 inline-block uppercase italic">Různé otázky</h2></div>
+            <div id="misc-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"></div>
         </section>
 
         <section>
-            <div class="text-center mb-10">
-                <h2 class="font-racing text-3xl font-bold italic text-purple-400 uppercase border-b-2 border-purple-400 pb-1 inline-block">Různé otázky</h2>
-            </div>
-            <div id="misc-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
-        </section>
-
-        <section>
-            <div class="text-center mb-10">
-                <h2 class="font-racing text-3xl font-bold italic text-amber-500 uppercase border-b-2 border-amber-500 pb-1 inline-block">Safety Car</h2>
-            </div>
+            <div class="text-center mb-10"><h2 class="font-racing text-3xl text-amber-500 border-b-2 border-amber-500 pb-1 inline-block uppercase italic">Safety Car</h2></div>
             <div id="sc-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
         </section>
 
@@ -124,26 +78,17 @@
 
     <script>
         const teamsInfo = {
-            mercedes: { name: "Mercedes", color: "#00A19B", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mercedes-AMG_Petronas_Formula_One_Team_Logo_%282026%29.webp/890px-Mercedes-AMG_Petronas_Formula_One_Team_Logo_%282026%29.webp.png" },
-            mclaren: { name: "McLaren", color: "#FF8700", logo: "https://static.vecteezy.com/system/resources/previews/020/500/399/non_2x/mclaren-brand-logo-car-symbol-name-black-and-orange-design-british-automobile-illustration-free-vector.jpg" },
-            redbull: { name: "Red Bull", color: "#0600EF", logo: "https://cdn-6.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" },
-            ferrari: { name: "Ferrari", color: "#EF4444", logo: "https://upload.wikimedia.org/wikipedia/de/thumb/c/c0/Scuderia_Ferrari_Logo.svg/1536px-Scuderia_Ferrari_Logo.svg.png" },
-            audi: { name: "Audi", color: "#F50537", logo: "https://i.namu.wiki/i/4IBk6HSXTu4w5iSVgRXwBvbZkqJE2KDQNTdPQ9FbSjrWXWenVLMZCViGXE4kUstE1_NOJEAyaPcj96BJ3sO9Pw.webp" },
-            williams: { name: "Williams", color: "#00A0DE", logo: "https://images.seeklogo.com/logo-png/61/1/atlassian-williams-racing-logo-png_seeklogo-613639.png" },
-            aston: { name: "Aston M.", color: "#006F62", logo: "https://www.f1authentics.com/cdn/shop/collections/Team-Logos-1500x1800px-ASTON-MARTIN.jpg" },
-            rb: { name: "RB", color: "#6692FF", logo: "https://cdn-3.motorsport.com/images/mgl/Y998adGY/s800/visa-cash-app-rb-logo.jpg" },
-            cadillac: { name: "Cadillac", color: "#E5E7EB", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Cadillac_Formula_1_Team_logo.png/1024px-Cadillac_Formula_1_Team_logo.png" },
-            alpine: { name: "Alpine", color: "#0090FF", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Alpine_F1_Team_Logo.svg/500px-Alpine_F1_Team_Logo.svg.png" },
-            haas: { name: "Haas", color: "#E6002B", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Haas_F1_Team_Logo.svg/1280px-Haas_F1_Team_Logo.svg.png" }
-        };
-
-        const driversPhotos = {
-            "VER": "https://cdn-6.motorsport.com/images/mgl/6D1XbeV0/s8/max-verstappen-red-bull-racing.jpg",
-            "NOR": "https://img2.51gt3.com/rac/racer/202503/cfc139b2b49e48cd80a436c00a71711d.png",
-            "PIA": "https://ratings-images-prod.pulse.ea.com/F1-25/portraits/p4.png",
-            "LEC": "https://img2.51gt3.com/rac/racer/202503/fe2de9975d864e38acfd9933164954a6.png",
-            "HAM": "https://img2.51gt3.com/rac/racer/202503/0ff8ae7649b447bd8e023f4e31dc4042.png",
-            "SAI": "https://cdn-4.motorsport.com/images/mgl/2jXPqrg6/s800/carlos-sainz-williams.jpg"
+            mercedes: { name: "Mercedes", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mercedes-AMG_Petronas_Formula_One_Team_Logo_%282026%29.webp/890px-Mercedes-AMG_Petronas_Formula_One_Team_Logo_%282026%29.webp.png" },
+            mclaren: { name: "McLaren", logo: "https://static.vecteezy.com/system/resources/previews/020/500/399/non_2x/mclaren-brand-logo-car-symbol-name-black-and-orange-design-british-automobile-illustration-free-vector.jpg" },
+            redbull: { name: "Red Bull", logo: "https://cdn-6.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" },
+            ferrari: { name: "Ferrari", logo: "https://upload.wikimedia.org/wikipedia/de/thumb/c/c0/Scuderia_Ferrari_Logo.svg/1536px-Scuderia_Ferrari_Logo.svg.png" },
+            audi: { name: "Audi", logo: "https://i.namu.wiki/i/4IBk6HSXTu4w5iSVgRXwBvbZkqJE2KDQNTdPQ9FbSjrWXWenVLMZCViGXE4kUstE1_NOJEAyaPcj96BJ3sO9Pw.webp" },
+            williams: { name: "Williams", logo: "https://images.seeklogo.com/logo-png/61/1/atlassian-williams-racing-logo-png_seeklogo-613639.png" },
+            aston: { name: "Aston M.", logo: "https://www.f1authentics.com/cdn/shop/collections/Team-Logos-1500x1800px-ASTON-MARTIN.jpg" },
+            rb: { name: "RB", logo: "https://cdn-3.motorsport.com/images/mgl/Y998adGY/s800/visa-cash-app-rb-logo.jpg" },
+            cadillac: { name: "Cadillac", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Cadillac_Formula_1_Team_logo.png/1024px-Cadillac_Formula_1_Team_logo.png" },
+            alpine: { name: "Alpine", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Alpine_F1_Team_Logo.svg/500px-Alpine_F1_Team_Logo.svg.png" },
+            haas: { name: "Haas", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Haas_F1_Team_Logo.svg/1280px-Haas_F1_Team_Logo.svg.png" }
         };
 
         const constructorData = {
@@ -155,77 +100,63 @@
 
         const compBody = document.getElementById('comparison-body');
         for (let i = 0; i < 11; i++) {
-            let row = `<tr><td class="py-3 sticky-col font-black text-base border-r border-white/10">${i+1}.</td>`;
+            let row = `<tr><td class="py-3 sticky-col font-black text-base">${i+1}.</td>`;
             ["Škody", "Králik", "Javor", "Čermis"].forEach(t => {
                 const team = teamsInfo[constructorData[t][i]];
-                row += `<td class="px-4 py-3 text-center"><div class="flex flex-col items-center"><img src="${team.logo}" class="h-4 w-auto mb-1 opacity-90"><span class="uppercase tracking-tighter text-[9px] text-gray-400 font-bold">${team.name}</span></div></td>`;
+                row += `<td class="px-4 py-3 text-center"><div class="flex flex-col items-center"><img src="${team.logo}" class="h-4 w-auto mb-1 opacity-80"><span class="uppercase tracking-tighter text-[8px] text-gray-400 font-bold">${team.name}</span></div></td>`;
             });
             compBody.innerHTML += row + `</tr>`;
         }
 
         const h2hDriverPolls = [
-            { q: "Pole: VER / RUS / NOR", votes: { "NOR": ["Škody", "Králik"], "VER": ["Javor", "Čermis"] } },
-            { q: "Pole: ANT / SAI / PIA", votes: { "PIA": ["Škody", "Králik", "Javor", "Čermis"] } },
-            { q: "Pole: HAM / PIA / VER", votes: { "VER": ["Ško", "Jav", "Čer"], "PIA": ["Krá"] } },
-            { q: "Pole: LEC / RUS / VER", votes: { "VER": ["Ško", "Jav", "Čer"], "LEC": ["Krá"] } }
+            { q: "Nejvíc Pole: VER / RUS / NOR", votes: { "Lando Norris": ["Škody", "Králik"], "Max Verstappen": ["Javor", "Čermis"] } },
+            { q: "Nejvíc Pole: ANT / SAI / PIA", votes: { "Oscar Piastri": ["Škody", "Králik", "Javor", "Čermis"] } },
+            { q: "Nejvíc Pole: HAM / PIA / VER", votes: { "Max Verstappen": ["Škody", "Javor", "Čermis"], "Oscar Piastri": ["Králik"] } },
+            { q: "Nejvíc Pole: LEC / RUS / VER", votes: { "Max Verstappen": ["Škody", "Javor", "Čermis"], "Charles Leclerc": ["Králik"] } },
+            { q: "Nejhůře: ALO / LEC / RUS", votes: { "Fernando Alonso": ["Škody", "Králik"], "Charles Leclerc": ["Javor", "Čermis"] } },
+            { q: "Nejhůře: STR / PER / LAW", votes: { "Lance Stroll": ["Škody", "Králik", "Čermis"], "Sergio Pérez": ["Javor"] } },
+            { q: "Nejhůře: BOT / OCO / BOR", votes: { "Esteban Ocon": ["Škody", "Javor", "Čermis"], "Valtteri Bottas": ["Králik"] } }
         ];
 
-        const h2hVisualGrid = document.getElementById('h2h-drivers-visual-grid');
+        const h2hDGrid = document.getElementById('h2h-drivers-grid');
         h2hDriverPolls.forEach(poll => {
-            let cardHtml = `<div class="h2h-driver-card p-5 flex flex-col h-full shadow-md"><h3 class="text-xs font-black text-cyan-400 uppercase mb-6 text-center border-b border-cyan-400/20 pb-3 leading-tight min-h-[40px] flex items-center justify-center">${poll.q}</h3><div class="flex justify-around items-end flex-grow gap-4">`;
+            let html = `<div class="h2h-driver-card p-4 flex flex-col shadow-lg border-t-2 border-cyan-500/50"><h3 class="text-[9px] font-black text-cyan-400 uppercase mb-4 text-center border-b border-white/5 pb-2 min-h-[40px] flex items-center justify-center">${poll.q}</h3><div class="space-y-2">`;
             Object.entries(poll.votes).forEach(([driver, tipsters]) => {
-                const photo = driversPhotos[driver] || "https://www.formula1.com/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png";
-                cardHtml += `<div class="flex flex-col items-center w-full"><div class="relative mb-4"><img src="${photo}" class="w-20 h-20 rounded-full border-2 border-cyan-500 shadow-xl object-cover"><span class="absolute -top-2 -right-2 bg-cyan-600 text-white text-[10px] w-7 h-7 flex items-center justify-center rounded-full font-black shadow-lg">${tipsters.length}x</span></div><div class="mt-3 text-center"><span class="text-xs font-black uppercase text-white tracking-widest">${driver}</span><p class="text-[9px] text-gray-500 font-bold mt-1 uppercase leading-none">${tipsters.join(', ')}</p></div></div>`;
+                html += `<div class="bg-white/5 p-2 rounded-lg text-center"><span class="text-[10px] block font-black text-white uppercase">${driver}</span><span class="text-[8px] text-gray-500 font-bold uppercase">${tipsters.join(', ')}</span></div>`;
             });
-            h2hVisualGrid.innerHTML += cardHtml + `</div></div>`;
+            h2hDGrid.innerHTML += html + `</div></div>`;
         });
 
         const h2hDuels = ["Audi / Cadillac", "Ferrari / Aston M.", "Alpine / Williams", "Haas / RB"];
-        const h2hData = { 
-            "Škody": ["Audi", "Ferrari", "Williams", "RB"], 
-            "Králik": ["stejné kolo", "stejné kolo", "stejné kolo", "stejné kolo"], 
-            "Javor": ["Audi", "stejné kolo", "Williams", "stejné kolo"], 
-            "Čermis": ["Audi", "Aston M.", "Williams", "RB"] 
-        };
+        const h2hData = { "Škody": ["Audi", "Ferrari", "Williams", "RB"], "Králik": ["stejné kolo", "stejné kolo", "stejné kolo", "stejné kolo"], "Javor": ["Audi", "stejné kolo", "Williams", "stejné kolo"], "Čermis": ["Audi", "Aston M.", "Williams", "RB"] };
         const h2hTable = document.getElementById('h2h-table');
         let h2hHtml = `<thead><tr class="bg-black/40 text-[10px] uppercase text-blue-300"><th class="py-4 px-6 sticky-col">Tipér</th>`;
         h2hDuels.forEach(d => h2hHtml += `<th class="py-4 px-4 text-center whitespace-nowrap">${d}</th>`);
         h2hHtml += `</tr></thead><tbody class="divide-y divide-white/10 text-xs font-bold">`;
         Object.entries(h2hData).forEach(([n, t]) => {
             h2hHtml += `<tr class="hover:bg-white/5"><td class="py-4 px-6 sticky-col border-r border-white/10">${n}</td>`;
-            t.forEach(v => h2hHtml += `<td class="p-4 text-center"><span class="px-4 py-1.5 rounded-full text-[10px] uppercase ${v==='stejné kolo'?'bg-white/10 text-gray-500':'bg-blue-900/40 text-blue-300 border border-blue-500/20'}">${v}</span></td>`);
+            t.forEach(v => h2hHtml += `<td class="p-4 text-center"><span class="px-3 py-1 rounded-full text-[9px] uppercase ${v==='stejné kolo'?'bg-white/10 text-gray-500':'bg-blue-900/40 text-blue-300 border border-blue-500/20'}">${v}</span></td>`);
             h2hHtml += `</tr>`;
         });
         h2hTable.innerHTML = h2hHtml + `</tbody>`;
 
-        const internalDuels = [
-            { team: "McLaren", key: "mclaren", d1: "NOR", t1: ["Škody", "Javor"], d2: "PIA", t2: ["Králik", "Čermis"], img1: driversPhotos["NOR"], img2: driversPhotos["PIA"] },
-            { team: "Ferrari", key: "ferrari", d1: "HAM", t1: ["Škody", "Javor"], d2: "LEC", t2: ["Králik", "Čermis"], img1: driversPhotos["HAM"], img2: driversPhotos["LEC"] },
-            { team: "Williams", key: "williams", d1: "SAI", t1: ["Ško", "Jav", "Čer"], d2: "ALB", t2: ["Krá"], img1: driversPhotos["SAI"], img2: "https://img2.51gt3.com/rac/racer/202503/1f1fd439e5344c7a83faf4a80d09486f.png" }
-        ];
-
-        const battleGrid = document.getElementById('internal-battles');
-        internalDuels.forEach(d => {
-            const team = teamsInfo[d.key];
-            battleGrid.innerHTML += `<div class="battle-card overflow-hidden shadow-lg" style="border-top: 4px solid ${team.color}"><div class="bg-white/5 py-2 px-4 flex justify-between items-center"><span class="text-[9px] font-black uppercase text-gray-500">${team.name}</span><img src="${team.logo}" class="h-3 w-auto opacity-40"></div><div class="flex p-4 items-center gap-3"><div class="flex-1 flex flex-col items-center"><img src="${d.img1}" class="w-16 h-16 rounded-full mb-2 border-2 border-white/10 shadow-lg object-cover"><span class="text-[11px] font-black text-white">${d.d1}</span><div class="text-[8px] text-gray-400 font-black mt-1 uppercase">${d.t1.join(',')}</div></div><div class="text-white/20 font-black text-xs italic">VS</div><div class="flex-1 flex flex-col items-center"><img src="${d.img2}" class="w-16 h-16 rounded-full mb-2 border-2 border-white/10 shadow-lg object-cover opacity-40"><span class="text-[11px] font-black text-white/60">${d.d2}</span><div class="text-[8px] text-gray-500 font-black mt-1 uppercase">${d.t2.length?d.t2.join(','):'-'}</div></div></div></div>`;
-        });
-
-        // Různé otázky (S NOVÝMI POLOŽKAMI Z OBRÁZKŮ)
         const miscQuestions = [
             { q: "Brazílie prší?", tips: { "Škody": "ANO", "Králik": "ANO", "Javor": "NE", "Čermis": "ANO" } },
             { q: "Belgie prší?", tips: { "Škody": "ANO", "Králik": "NE", "Javor": "NE", "Čermis": "NE" } },
-            { q: "Kolik vítězů v sezóně?", tips: { "Škody": "6", "Králik": "5", "Javor": "6", "Čermis": "5" } },
-            { q: "Ferrari vyhraje v Monze?", tips: { "Škody": "NE", "Králik": "ANO", "Javor": "NE", "Čermis": "NE" } },
+            { q: "Monako čas?", tips: { "Škody": "pomalejší", "Králik": "rychlejší", "Javor": "pomalejší", "Čermis": "rychlejší" } },
             { q: "Hamilton 106. win?", tips: { "Škody": "ANO", "Králik": "NE", "Javor": "ANO", "Čermis": "NE" } },
             { q: "Pit stop <1.91s?", tips: { "Škody": "NE", "Králik": "NE", "Javor": "ANO", "Čermis": "ANO" } },
             { q: "Vydrží Hadjar celou sezonu?", tips: { "Škody": "ANO", "Králik": "ANO", "Javor": "ANO", "Čermis": "ANO" } },
-            { q: "Kolikrát full wets?", tips: { "Škody": "1x-3x", "Králik": "1x-3x", "Javor": "0x", "Čermis": "1x-3x" } }
+            { q: "Papaya rules?", tips: { "Škody": "Držet", "Králik": "Držet", "Javor": "Držet", "Čermis": "Držet" } },
+            { q: "Kolikrát full wets?", tips: { "Škody": "1x-3x", "Králik": "1x-3x", "Javor": "0x", "Čermis": "1x-3x" } },
+            { q: "Kolik vítězů 2026?", tips: { "Škody": "6", "Králik": "5", "Javor": "6", "Čermis": "5" } },
+            { q: "Ferrari vyhraje v Monze?", tips: { "Škody": "NE", "Králik": "ANO", "Javor": "NE", "Čermis": "NE" } }
         ];
 
         const miscGrid = document.getElementById('misc-grid');
         miscQuestions.forEach(item => {
-            let html = `<div class="misc-card p-4 flex flex-col h-full shadow-lg border-l-4 border-purple-600/50"><h3 class="text-[10px] text-purple-300 font-black uppercase mb-4 border-b border-white/10 pb-2 text-center min-h-[30px] flex items-center justify-center leading-tight">${item.q}</h3><div class="space-y-1.5">`;
-            Object.entries(item.tips).forEach(([n, t]) => html += `<div class="flex justify-between items-center bg-white/5 p-2 rounded-lg border border-white/5"><span class="text-[9px] text-gray-500 font-bold">${n}</span><span class="text-[10px] font-black text-white uppercase">${t}</span></div>`);
+            let html = `<div class="misc-card p-4 flex flex-col h-full shadow-lg border-l-4 border-purple-600/50"><h3 class="text-[9px] text-purple-300 font-black uppercase mb-4 border-b border-white/10 pb-2 text-center min-h-[30px] flex items-center justify-center leading-tight">${item.q}</h3><div class="space-y-1.5">`;
+            Object.entries(item.tips).forEach(([n, t]) => html += `<div class="flex justify-between items-center bg-white/5 p-2 rounded-lg"><span class="text-[8px] text-gray-500 font-bold">${n}</span><span class="text-[9px] font-black text-white uppercase">${t}</span></div>`);
             miscGrid.innerHTML += html + `</div></div>`;
         });
 
